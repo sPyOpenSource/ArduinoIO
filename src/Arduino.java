@@ -36,7 +36,7 @@ public class Arduino extends JVSMain implements MyOpenLabDriverOwnerIF
 {
   private Image image;
 
-  private MyOpenLabDriverIF driver ;
+  private MyOpenLabDriverIF driver;
 
   VS1DByte inBytes = new VS1DByte(1);
   
@@ -168,7 +168,7 @@ public class Arduino extends JVSMain implements MyOpenLabDriverOwnerIF
           System.out.println("DRIVER IS NULL!!!");
       }
 
-    int c=0;
+    int c = 0;
     
     setPin(c++,ExternalIF.C_BOOLEAN,ExternalIF.PIN_OUTPUT); // Taste1
     setPin(c++,ExternalIF.C_BOOLEAN,ExternalIF.PIN_OUTPUT);
@@ -191,7 +191,7 @@ public class Arduino extends JVSMain implements MyOpenLabDriverOwnerIF
     setPin(c++,ExternalIF.C_BOOLEAN,ExternalIF.PIN_INPUT);
     setPin(c++,ExternalIF.C_BOOLEAN,ExternalIF.PIN_INPUT); // LED 4
 
-    c=0;
+    c = 0;
     element.jSetPinDescription(c++,"In-1 (Arduino Pin 2)");
     element.jSetPinDescription(c++,"In-2 (Arduino Pin 3)");
     element.jSetPinDescription(c++,"In-3 (Arduino Pin 4)");
@@ -213,29 +213,27 @@ public class Arduino extends JVSMain implements MyOpenLabDriverOwnerIF
     element.jSetPinDescription(c++,"Out-5 (Arduino Pin 12)");
     element.jSetPinDescription(c++,"Out-6 (Arduino Pin 13)");
 
-    String fileName=element.jGetSourcePath()+"icon.png";
-    image=element.jLoadImage(fileName);
+    String fileName=element.jGetSourcePath() + "icon.png";
+    image = element.jLoadImage(fileName);
 
     element.jSetCaptionVisible(true);
     element.jSetCaption("Arduino I/O JV");
     setName("Arduino I/O JV");
-      
-      
   }
 
   @Override
   public void initInputPins()
   {
-    int c=12;
+    int c = 12;
     
-    led1=(VSBoolean)element.getPinInputReference(c++);
-    led2=(VSBoolean)element.getPinInputReference(c++);
-    led3=(VSBoolean)element.getPinInputReference(c++);
-    led4=(VSBoolean)element.getPinInputReference(c++);
-    led5=(VSBoolean)element.getPinInputReference(c++);
-    led6=(VSBoolean)element.getPinInputReference(c++);
+    led1 = (VSBoolean)element.getPinInputReference(c++);
+    led2 = (VSBoolean)element.getPinInputReference(c++);
+    led3 = (VSBoolean)element.getPinInputReference(c++);
+    led4 = (VSBoolean)element.getPinInputReference(c++);
+    led5 = (VSBoolean)element.getPinInputReference(c++);
+    led6 = (VSBoolean)element.getPinInputReference(c++);
     
-    if (comStart==null) comStart = new VSBoolean(false);
+    if (comStart == null) comStart = new VSBoolean(false);
 
     if (led1==null) led1 = new VSBoolean(false);
     if (led2==null) led2 = new VSBoolean(false);
